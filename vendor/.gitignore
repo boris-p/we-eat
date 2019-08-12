@@ -8,6 +8,7 @@ capybara-*.html
 /spec/tmp
 *.orig
 rerun.txt
+.idea/
 pickle-email-*.html
 
 # Ignore all logfiles and tempfiles.

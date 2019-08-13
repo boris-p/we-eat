@@ -1,0 +1,641 @@
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "restaurants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (9.1ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (3.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (4.2ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 1.7ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "restaurants" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (4.1ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "restaurants" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (3.3ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "restaurants" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (5.6ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "restaurants" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.8ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (4.3ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "restaurants" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (2.8ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "restaurants" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "restaurants" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (3.1ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 4.364729857941832], ["created_at", "2019-08-12 15:03:56.477834"], ["updated_at", "2019-08-12 15:03:56.477834"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 2.895013266775488], ["created_at", "2019-08-12 15:03:56.479428"], ["updated_at", "2019-08-12 15:03:56.479428"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 9.943073096345255], ["created_at", "2019-08-12 15:03:56.480389"], ["updated_at", "2019-08-12 15:03:56.480389"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 9.165032427968516], ["created_at", "2019-08-12 15:03:56.481315"], ["updated_at", "2019-08-12 15:03:56.481315"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 0.6305819131391199], ["created_at", "2019-08-12 15:03:56.482421"], ["updated_at", "2019-08-12 15:03:56.482421"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 18:03:56 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 9.492084537040412], ["created_at", "2019-08-12 15:03:56.502690"], ["updated_at", "2019-08-12 15:03:56.502690"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 0.013208738074962367], ["created_at", "2019-08-12 15:03:56.503909"], ["updated_at", "2019-08-12 15:03:56.503909"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 7.872949019978557], ["created_at", "2019-08-12 15:03:56.505007"], ["updated_at", "2019-08-12 15:03:56.505007"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 2.7165827483603855], ["created_at", "2019-08-12 15:03:56.506060"], ["updated_at", "2019-08-12 15:03:56.506060"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.583129291435525], ["created_at", "2019-08-12 15:03:56.507198"], ["updated_at", "2019-08-12 15:03:56.507198"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 18:03:56 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "restaurants" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.7ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (1.1ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (3.5ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 8.302302561440094], ["created_at", "2019-08-12 15:07:15.014796"], ["updated_at", "2019-08-12 15:07:15.014796"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.8258649918630883], ["created_at", "2019-08-12 15:07:15.016411"], ["updated_at", "2019-08-12 15:07:15.016411"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 5.95103738492257], ["created_at", "2019-08-12 15:07:15.017373"], ["updated_at", "2019-08-12 15:07:15.017373"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.9139402952420435], ["created_at", "2019-08-12 15:07:15.018334"], ["updated_at", "2019-08-12 15:07:15.018334"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 9.985922778600347], ["created_at", "2019-08-12 15:07:15.019220"], ["updated_at", "2019-08-12 15:07:15.019220"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 18:07:15 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 2.8633628300274374], ["created_at", "2019-08-12 15:07:15.041819"], ["updated_at", "2019-08-12 15:07:15.041819"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 2.6915582137517537], ["created_at", "2019-08-12 15:07:15.043045"], ["updated_at", "2019-08-12 15:07:15.043045"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 2.2541842048335967], ["created_at", "2019-08-12 15:07:15.044118"], ["updated_at", "2019-08-12 15:07:15.044118"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.9584317925650767], ["created_at", "2019-08-12 15:07:15.045232"], ["updated_at", "2019-08-12 15:07:15.045232"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.3233802826312084], ["created_at", "2019-08-12 15:07:15.046302"], ["updated_at", "2019-08-12 15:07:15.046302"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 18:07:15 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "restaurants" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (3.1ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 5.324509028302323], ["created_at", "2019-08-12 15:07:24.614485"], ["updated_at", "2019-08-12 15:07:24.614485"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 6.089935309576142], ["created_at", "2019-08-12 15:07:24.616406"], ["updated_at", "2019-08-12 15:07:24.616406"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 6.429703816376669], ["created_at", "2019-08-12 15:07:24.617635"], ["updated_at", "2019-08-12 15:07:24.617635"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 5.652699418096974], ["created_at", "2019-08-12 15:07:24.618799"], ["updated_at", "2019-08-12 15:07:24.618799"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 4.801276458244952], ["created_at", "2019-08-12 15:07:24.619945"], ["updated_at", "2019-08-12 15:07:24.619945"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 18:07:24 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.91206359709106], ["created_at", "2019-08-12 15:07:24.654518"], ["updated_at", "2019-08-12 15:07:24.654518"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 9.649450562313053], ["created_at", "2019-08-12 15:07:24.655901"], ["updated_at", "2019-08-12 15:07:24.655901"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 0.121122183717568], ["created_at", "2019-08-12 15:07:24.657166"], ["updated_at", "2019-08-12 15:07:24.657166"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.0347167269155015], ["created_at", "2019-08-12 15:07:24.658301"], ["updated_at", "2019-08-12 15:07:24.658301"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 9.862665123553892], ["created_at", "2019-08-12 15:07:24.659495"], ["updated_at", "2019-08-12 15:07:24.659495"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 18:07:24 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "restaurants" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (3.6ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 1.84611313131393], ["created_at", "2019-08-12 15:07:38.994856"], ["updated_at", "2019-08-12 15:07:38.994856"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 7.687537404580431], ["created_at", "2019-08-12 15:07:38.996638"], ["updated_at", "2019-08-12 15:07:38.996638"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 4.355702043900954], ["created_at", "2019-08-12 15:07:38.997780"], ["updated_at", "2019-08-12 15:07:38.997780"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.4026769785948243], ["created_at", "2019-08-12 15:07:38.998828"], ["updated_at", "2019-08-12 15:07:38.998828"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 0.8229749779035378], ["created_at", "2019-08-12 15:07:38.999853"], ["updated_at", "2019-08-12 15:07:38.999853"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 18:07:39 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 5.792273533850949], ["created_at", "2019-08-12 15:07:39.023620"], ["updated_at", "2019-08-12 15:07:39.023620"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 1.4330853003199318], ["created_at", "2019-08-12 15:07:39.025064"], ["updated_at", "2019-08-12 15:07:39.025064"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 4.034410066927262], ["created_at", "2019-08-12 15:07:39.026274"], ["updated_at", "2019-08-12 15:07:39.026274"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 0.14238059433922312], ["created_at", "2019-08-12 15:07:39.027501"], ["updated_at", "2019-08-12 15:07:39.027501"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 6.292631384770429], ["created_at", "2019-08-12 15:07:39.028770"], ["updated_at", "2019-08-12 15:07:39.028770"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 18:07:39 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "restaurants" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.1ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.9ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (7.6ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 5.941408442325828], ["created_at", "2019-08-12 15:54:31.608306"], ["updated_at", "2019-08-12 15:54:31.608306"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 4.142605119542876], ["created_at", "2019-08-12 15:54:31.609772"], ["updated_at", "2019-08-12 15:54:31.609772"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 7.449961428720209], ["created_at", "2019-08-12 15:54:31.611195"], ["updated_at", "2019-08-12 15:54:31.611195"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.3855226141847936], ["created_at", "2019-08-12 15:54:31.612263"], ["updated_at", "2019-08-12 15:54:31.612263"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 6.411688013502889], ["created_at", "2019-08-12 15:54:31.613314"], ["updated_at", "2019-08-12 15:54:31.613314"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 18:54:31 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 7.114398660023666], ["created_at", "2019-08-12 15:54:31.635105"], ["updated_at", "2019-08-12 15:54:31.635105"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.3807286078983614], ["created_at", "2019-08-12 15:54:31.636340"], ["updated_at", "2019-08-12 15:54:31.636340"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 8.417998060896684], ["created_at", "2019-08-12 15:54:31.637390"], ["updated_at", "2019-08-12 15:54:31.637390"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 4.664358455327743], ["created_at", "2019-08-12 15:54:31.638531"], ["updated_at", "2019-08-12 15:54:31.638531"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 4.613683851490059], ["created_at", "2019-08-12 15:54:31.639644"], ["updated_at", "2019-08-12 15:54:31.639644"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 18:54:31 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "restaurants" DISABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.5ms)[0m  [1m[34m          SELECT schemaname || '.' || tablename
+          FROM pg_tables
+          WHERE
+            tablename !~ '_prt_' AND
+             tablename <> 'schema_migrations'  AND tablename <> 'ar_internal_metadata'  AND
+            schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.7ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'we_eat_test'[0m
+  [1m[35m (3.3ms)[0m  [1m[35mTRUNCATE TABLE "public"."restaurants" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "restaurants" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.5ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 9.669152889604149], ["created_at", "2019-08-12 16:05:41.924832"], ["updated_at", "2019-08-12 16:05:41.924832"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 0.3186406232668204], ["created_at", "2019-08-12 16:05:41.932533"], ["updated_at", "2019-08-12 16:05:41.932533"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 2.495780017083237], ["created_at", "2019-08-12 16:05:41.933677"], ["updated_at", "2019-08-12 16:05:41.933677"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 6.948473146379866], ["created_at", "2019-08-12 16:05:41.934775"], ["updated_at", "2019-08-12 16:05:41.934775"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.944930806742142], ["created_at", "2019-08-12 16:05:41.935861"], ["updated_at", "2019-08-12 16:05:41.935861"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 19:05:41 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 7.410795882504898], ["created_at", "2019-08-12 16:05:41.947900"], ["updated_at", "2019-08-12 16:05:41.947900"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 7.860753654194456], ["created_at", "2019-08-12 16:05:41.949112"], ["updated_at", "2019-08-12 16:05:41.949112"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 3.1827425640849425], ["created_at", "2019-08-12 16:05:41.950195"], ["updated_at", "2019-08-12 16:05:41.950195"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 1.6580667024753848], ["created_at", "2019-08-12 16:05:41.951329"], ["updated_at", "2019-08-12 16:05:41.951329"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mRestaurant Create (0.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "rating", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Faker::Lorem"], ["rating", 4.552288422956595], ["created_at", "2019-08-12 16:05:41.952418"], ["updated_at", "2019-08-12 16:05:41.952418"]]
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/restaurants" for 127.0.0.1 at 2019-08-12 19:05:41 +0300
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m

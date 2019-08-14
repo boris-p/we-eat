@@ -1,5 +1,5 @@
 class HealthController < ApplicationController
   def index
-    render html: '<div>healthy</div>'.html_safe
+    json_response(message: 'healthy', status: 200)
   end
 end

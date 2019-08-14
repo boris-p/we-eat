@@ -20,7 +20,9 @@
 #
 
 class Restaurant < ApplicationRecord
+
   # validations
-  validates_presence_of :name
-  
+  validates_presence_of :name, :url, :address, :latitude, :longitude
+  validates_length_of :phone, :minimum => 3
+
 end

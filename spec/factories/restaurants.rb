@@ -21,7 +21,12 @@
 
 FactoryBot.define do
   factory :restaurant do
-    name { Faker::Lorem.name }
+    name { Faker::Lorem.word }
+    url { Faker::Internet.url }
+    address { Faker::Address.full_address }
+    latitude { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
+    phone { Faker::PhoneNumber.cell_phone }
     rating { Faker::Number.between(from: 0.00, to: 10.00) }
   end
 end

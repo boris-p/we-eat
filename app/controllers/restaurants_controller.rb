@@ -1,16 +1,13 @@
 class RestaurantsController < ApplicationController
+  before_action :set_restaurant, only: %i[show update destroy]
+
   def index
     @restaurants = Restaurant.all
     json_response(@restaurants)
   end
 
   def show
-    begin
-      @restaurant = Restaurant.find(params[:id])
-      json_response(@restaurant)
-    rescue ActiveRecord::RecordNotFound
-      json_response({message: 'object not found'}, 404)
-    end
+    json_response(@restaurant)
   end
 
   def create
@@ -23,26 +20,20 @@ class RestaurantsController < ApplicationController
   end
 
   def update
-    begin
-      @restaurant = Restaurant.find(params[:id])
-      @restaurant.update(restaurant_params)
-      head :no_content
-    rescue ActiveRecord::RecordNotFound
-      json_response({message: 'object not found'}, 404)
-    end
+    @restaurant.update(restaurant_params)
+    head :no_content
   end
 
   def destroy
-    begin
-      @restaurant = Restaurant.find(params[:id])
-      @restaurant.destroy
-      head :no_content
-    rescue ActiveRecord::RecordNotFound
-      json_response({message: 'Could not destroy - object not found'}, 404)
-    end
+    @restaurant.destroy
+    head :no_content
   end
 
   private
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:id])
+  end
 
   def restaurant_params
     # whitelist params

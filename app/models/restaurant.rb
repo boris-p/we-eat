@@ -21,6 +21,8 @@
 
 class Restaurant < ApplicationRecord
 
+  has_and_belongs_to_many :cuisines
+
   # validations
   validates_presence_of :name, :url, :address, :latitude, :longitude
   validates_length_of :phone, :minimum => 3

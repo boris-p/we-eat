@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: cuisines
@@ -11,9 +13,8 @@
 require 'rails_helper'
 
 RSpec.describe Cuisine, type: :model do
-
   it { should have_and_belong_to_many(:restaurants) }
-  
+
   it { should validate_presence_of(:name) }
   it { should validate_uniqueness_of(:name) }
 end

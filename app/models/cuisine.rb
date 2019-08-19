@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: cuisines
@@ -9,7 +11,6 @@
 #
 
 class Cuisine < ApplicationRecord
-
   has_and_belongs_to_many :restaurants
 
   validates_presence_of :name

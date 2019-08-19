@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class CuisinesController < ApplicationController
-  before_action :set_cuisine, only: %i[show update destroy]
+  before_action :set_cuisine, only: %i(show update destroy)
 
   def index
-    @Cuisines = Cuisine.all
+    @cuisines = Cuisine.all
     json_response(@Cuisines)
   end
 
@@ -13,9 +15,9 @@ class CuisinesController < ApplicationController
   def create
     @cuisine = Cuisine.new(cuisine_params)
     if @cuisine.save
-      json_response({message: 'object created succussfully'}, 201)
+      json_response({ message: 'object created succussfully' }, 201)
     else
-      json_response({message: "was not able to save. Error is #{@cuisine.errors.full_messages}"}, 400)
+      json_response({ message: "was not able to save. Error is #{@cuisine.errors.full_messages}" }, 400)
     end
   end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: restaurants
@@ -20,11 +22,10 @@
 #
 
 class Restaurant < ApplicationRecord
-
+  has_many :reviews, dependent: :destroy
   has_and_belongs_to_many :cuisines
 
   # validations
   validates_presence_of :name, :url, :address, :latitude, :longitude
   validates_length_of :phone, :minimum => 3
-
 end

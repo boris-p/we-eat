@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class RestaurantsController < ApplicationController
-  before_action :set_restaurant, only: %i[show update destroy]
+  before_action :set_restaurant, only: [:show, :update, :destroy]
 
   def index
     @restaurants = Restaurant.all
@@ -13,9 +15,9 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
-      json_response({message: 'object created succussfully'}, 201)
+      json_response({ message: 'object created succussfully' }, 201)
     else
-      json_response({message: "was not able to save. Error is #{@restaurant.errors.full_messages}"}, 400)
+      json_response({ message: "was not able to save. Error is #{@restaurant.errors.full_messages}" }, 400)
     end
   end
 
@@ -37,6 +39,7 @@ class RestaurantsController < ApplicationController
 
   def restaurant_params
     # whitelist params
-    params.permit(:name, :url, :tenbis_id, :rating, :num_of_reviews, :address, :latitude, :longitude, :delivery_time, :phone, :logo_url, :img_url)
+    params.permit(:name, :url, :tenbis_id, :rating, :num_of_reviews, :address, :latitude, :longitude,
+                  :delivery_time, :phone, :logo_url, :img_url)
   end
 end

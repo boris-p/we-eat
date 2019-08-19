@@ -13,8 +13,8 @@ RSpec.describe "Restaurants Cuisines api", type: :request do
   describe "PATCH /restaurants/:restaurant_id/cuisines/:id" do
     before { patch "/restaurants/#{rest_id}/cuisines/#{cuisine_id}" }
     context 'when cuisine was not previously included in the restaurant' do
-      it 'return status 201' do
-        expect(response).to have_http_status(201)
+      it 'return status 204' do
+        expect(response).to have_http_status(204)
       end
     end
 
@@ -42,7 +42,7 @@ RSpec.describe "Restaurants Cuisines api", type: :request do
       end
     end
 
-    context 'when trying to delete a cuisine that is not in the restaurants return 400' do
+    context 'when trying to delete a cuisine that is not in the restaurants return 404' do
       let(:cuisine_to_delete) { cuisines.last.id }
       it 'returns a 404 status code' do
         expect(response).to have_http_status(404)

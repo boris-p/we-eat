@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class RestaurantsCuisinesController < ApplicationController
-  before_action :set_restaurant_and_cuisine, only: %i[ update destroy]
+  before_action :set_restaurant_and_cuisine, only: %i(update destroy)
 
   def update
     if @restaurant.cuisines.include?(@cuisine)
@@ -15,7 +17,7 @@ class RestaurantsCuisinesController < ApplicationController
       @restaurant.cuisines.delete(@cuisine)
       head :no_content
     else
-      json_response({message: "was not able to find a cuisine - this should not have happened"}, 404)
+      json_response({ message: 'was not able to find a cuisine - this should not have happened' }, 404)
     end
   end
 
@@ -24,6 +26,5 @@ class RestaurantsCuisinesController < ApplicationController
   def set_restaurant_and_cuisine
     @restaurant = Restaurant.find(params[:restaurant_id])
     @cuisine = Cuisine.find(params[:id])
-
   end
 end

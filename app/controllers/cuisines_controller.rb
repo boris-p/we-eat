@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class CuisinesController < ApplicationController
-  before_action :set_cuisine, only: %i[show update destroy]
+  before_action :set_cuisine, only: %i(show update destroy)
 
   def index
     cuisines = Cuisine.all
@@ -11,7 +13,7 @@ class CuisinesController < ApplicationController
   end
 
   def create
-    #if we want to save locally before committing to the db -
+    # if we want to save locally before committing to the db -
     # if @cuisine.save
     #   json_response({message: 'object created succussfully'}, 201)
     # else

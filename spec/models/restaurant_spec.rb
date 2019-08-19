@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: restaurants
@@ -19,10 +21,9 @@
 #  updated_at     :datetime         not null
 #
 
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Restaurant, type: :model do
-
   it { should have_and_belong_to_many(:cuisines) }
 
   it { should validate_presence_of(:name) }

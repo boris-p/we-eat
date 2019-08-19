@@ -2,8 +2,8 @@ class CuisinesController < ApplicationController
   before_action :set_cuisine, only: %i[show update destroy]
 
   def index
-    @Cuisines = Cuisine.all
-    json_response(@Cuisines)
+    cuisines = Cuisine.all
+    json_response(cuisines)
   end
 
   def show
@@ -11,16 +11,18 @@ class CuisinesController < ApplicationController
   end
 
   def create
-    @cuisine = Cuisine.new(cuisine_params)
-    if @cuisine.save
-      json_response({message: 'object created succussfully'}, 201)
-    else
-      json_response({message: "was not able to save. Error is #{@cuisine.errors.full_messages}"}, 400)
-    end
+    #if we want to save locally before committing to the db -
+    # if @cuisine.save
+    #   json_response({message: 'object created succussfully'}, 201)
+    # else
+    #   json_response({message: "was not able to save. Error is #{@cuisine.errors.full_messages}"}, 400)
+    # end
+    cuisine = Cuisine.create!(cuisine_params)
+    json_response(cuisine, :created)
   end
 
   def update
-    @cuisine.update(cuisine_params)
+    @cuisine.update!(cuisine_params)
     head :no_content
   end
 

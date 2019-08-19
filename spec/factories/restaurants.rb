@@ -27,6 +27,7 @@ FactoryBot.define do
     latitude { Faker::Address.latitude }
     longitude { Faker::Address.longitude }
     phone { Faker::PhoneNumber.cell_phone }
-    rating { Faker::Number.between(from: 0.00, to: 10.00) }
+    rating { Faker::Number.between(from: 0, to: 10) }
+    delivery_time { Faker::Number.between(from: 0, to: 120) }
   end
 end

@@ -6,11 +6,7 @@ class RestaurantsCuisinesController < ApplicationController
       head :no_content
     else
       @restaurant.cuisines << @cuisine
-      if @restaurant.save
-        json_response({message: ' object created succussfully '}, 201)
-      else
-        json_response({message: "was not able to save. Error is #{@restaurant.errors.full_messages}"}, 400)
-      end
+      @restaurant.save!
     end
   end
 

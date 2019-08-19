@@ -4,10 +4,12 @@ RSpec.describe "Restaurants api", type: :request do
   let!(:restaurants) { create_list(:restaurant, 5) }
   let(:rest_id) { restaurants.first.id }
 
+
   describe "GET /restaurants" do
     before { get "/restaurants" }
 
     it "returns restaurants with the correct status code " do
+
       # Note `json` is a custom helper to parse JSON responses
       expect(json).not_to be_empty
       expect(json.size).to eq(5)
@@ -25,7 +27,7 @@ RSpec.describe "Restaurants api", type: :request do
         expect(response).to have_http_status(200)
       end
     end
-    
+
     context 'when the restaurant does not exist' do
       let(:rest_id) { 22 }
       it 'returns a 404 status code' do
@@ -36,8 +38,7 @@ RSpec.describe "Restaurants api", type: :request do
 
   describe "POST /restaurants" do
     context 'when the restaurant fields are valid' do
-      before { post "/restaurants", params: {name: 'new rest name', url: "http://awesomerest.org",
-                                             address: "nowehere land 20", latitude: 34, longitude: 34, phone: 122312321232, rating: 10} }
+      before { post "/restaurants", params: attributes_for(:restaurant) }
       it 'returns status code 201' do
         expect(response).to have_http_status(201)
       end
@@ -45,8 +46,8 @@ RSpec.describe "Restaurants api", type: :request do
 
     context 'when the restaurant fields are not valid' do
       before { post "/restaurants", params: {bad_param: 'really bad params'} }
-      it 'returns status code 400' do
-        expect(response).to have_http_status(400)
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
       end
     end
   end

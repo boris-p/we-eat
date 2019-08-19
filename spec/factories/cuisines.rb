@@ -10,6 +10,6 @@
 
 FactoryBot.define do
   factory :cuisine do
-    name { Faker::Lorem.words(number: 3) }
+    name { Faker::Lorem.characters(number: 20) }
   end
 end

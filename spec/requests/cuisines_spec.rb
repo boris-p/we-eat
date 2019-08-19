@@ -4,7 +4,7 @@ cuisineNumber = 5
 RSpec.describe "Cuisines api", type: :request do
   let!(:cuisines) { create_list(:cuisine, cuisineNumber) }
   let(:cuisine_id) { cuisines.first.id }
-
+  let (:test) { attributes_for(:cuisine) }
   describe "GET /cuisines" do
     before { get "/cuisines" }
 
@@ -36,7 +36,7 @@ RSpec.describe "Cuisines api", type: :request do
 
   describe "POST /cuisines" do
     context 'when the cuisine fields are valid' do
-      before { post "/cuisines", params: {name: 'asian'} }
+      before { post "/cuisines", params: attributes_for(:cuisine) }
       it 'returns status code 201' do
         expect(response).to have_http_status(201)
       end
@@ -44,8 +44,8 @@ RSpec.describe "Cuisines api", type: :request do
 
     context 'when the cuisine fields are not valid' do
       before { post "/cuisines", params: {bad_param: 'really bad params'} }
-      it 'returns status code 400' do
-        expect(response).to have_http_status(400)
+      it 'returns status code 422' do
+        expect(response).to have_http_status(422)
       end
     end
   end

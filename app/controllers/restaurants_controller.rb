@@ -4,8 +4,7 @@ class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: %i(show update destroy)
 
   def index
-    restaurants = Restaurant.all
-    json_response(restaurants)
+    json_response(Restaurant.all)
   end
 
   def show
@@ -35,6 +34,8 @@ class RestaurantsController < ApplicationController
 
   def restaurant_params
     # whitelist params
-    params.permit(:name, :url, :tenbis_id, :rating, :num_of_reviews, :address, :latitude, :longitude, :delivery_time, :phone, :logo_url, :img_url)
+    params.permit(:name, :url, :tenbis_id, :rating,
+                  :num_of_reviews, :address, :latitude, :longitude,
+                  :delivery_time, :phone, :logo_url, :img_url)
   end
 end

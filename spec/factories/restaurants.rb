@@ -23,7 +23,7 @@
 
 FactoryBot.define do
   factory :restaurant do
-    name { Faker::Lorem.word }
+    name { Faker::Lorem.characters(number: 20) }
     url { Faker::Internet.url }
     address { Faker::Address.full_address }
     latitude { Faker::Address.latitude }

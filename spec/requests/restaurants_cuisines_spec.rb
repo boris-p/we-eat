@@ -39,19 +39,11 @@ RSpec.describe 'Restaurants Cuisines api', type: :request do
       delete "/restaurants/#{rest_id}/cuisines/#{cuisine_to_delete}"
     end
 
-    context "when trying to delete a cuisine that exists as one of the restaurant's cuisines" do
+    context "when trying to delete a cuisine from a restaurant" do
       let(:cuisine_to_delete) { cuisines.first.id }
 
       it 'return status code 204' do
         expect(response).to have_http_status(204)
-      end
-    end
-
-    context 'when trying to delete a cuisine that is not in the restaurants return 404' do
-      let(:cuisine_to_delete) { cuisines.last.id }
-
-      it 'returns a 404 status code' do
-        expect(response).to have_http_status(404)
       end
     end
   end

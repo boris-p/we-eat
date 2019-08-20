@@ -4,21 +4,11 @@ class RestaurantsCuisinesController < ApplicationController
   before_action :set_restaurant_and_cuisine, only: %i(update destroy)
 
   def update
-    if @restaurant.cuisines.include?(@cuisine)
-      head :no_content
-    else
-      @restaurant.cuisines << @cuisine
-      @restaurant.save!
-    end
+    @restaurant.cuisines << @cuisine unless @restaurant.cuisines.include?(@cuisine)
   end
 
   def destroy
-    if @restaurant.cuisines.include?(@cuisine)
-      @restaurant.cuisines.delete(@cuisine)
-      head :no_content
-    else
-      json_response({ message: 'was not able to find a cuisine - this should not have happened' }, 404)
-    end
+    @restaurant.cuisines.destroy(@cuisine)
   end
 
   private

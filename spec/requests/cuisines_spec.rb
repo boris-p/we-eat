@@ -47,7 +47,7 @@ RSpec.describe 'Cuisines api', type: :request do
     end
 
     context 'when the cuisine fields are not valid' do
-      before { post '/cuisines', params: {bad_param: 'really bad params'} }
+      before { post '/cuisines', params: { bad_param: 'really bad params' } }
 
       it 'returns status code of unprocessable_entity' do
         expect(response).to have_http_status(:unprocessable_entity)
@@ -57,7 +57,7 @@ RSpec.describe 'Cuisines api', type: :request do
 
   describe 'PATCH /cuisines/:id' do
     context 'when cuisine exists' do
-      before { patch "/cuisines/#{cuisine_id}", params: {name: 'fusion'} }
+      before { patch "/cuisines/#{cuisine_id}", params: { name: 'fusion' } }
 
       it 'return no_content status' do
         expect(response).to have_http_status(:no_content)
@@ -67,7 +67,7 @@ RSpec.describe 'Cuisines api', type: :request do
     context 'when restaurant does not exist' do
       let(:cuisine_id) { EMPTY_ID }
 
-      before { patch "/cuisines/#{cuisine_id}", params: {name: 'fusion'} }
+      before { patch "/cuisines/#{cuisine_id}", params: { name: 'fusion' } }
 
       it 'return a not found status' do
         expect(response).to have_http_status(:not_found)

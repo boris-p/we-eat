@@ -46,7 +46,7 @@ group :development do
       git: 'https://github.com/ctran/annotate_models',
       ref: 'e84e22de8fb8fc4e251418bdc6875b1003c9898c'
   gem 'rubocop', require: false
-  gem 'rubocop-airbnb', '~> 1.5', require: false
+  gem 'rubocop-airbnb', require: false
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end

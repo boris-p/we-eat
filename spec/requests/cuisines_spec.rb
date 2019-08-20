@@ -2,18 +2,16 @@
 
 require 'rails_helper'
 
-cuisineNumber = 5
 RSpec.describe 'Cuisines api', type: :request do
-  let!(:cuisines) { create_list(:cuisine, cuisineNumber) }
+  let!(:cuisines) { create_list(:cuisine, 5) }
   let(:cuisine_id) { cuisines.first.id }
-  let (:test) { attributes_for(:cuisine) }
 
   describe 'GET /cuisines' do
     before { get '/cuisines' }
 
     it 'returns cuisines with the correct status code ' do
       expect(json).not_to be_empty
-      expect(json.size).to eq(cuisineNumber)
+      expect(json.size).to eq(5)
       expect(response).to have_http_status(200)
     end
   end
@@ -48,7 +46,7 @@ RSpec.describe 'Cuisines api', type: :request do
     end
 
     context 'when the cuisine fields are not valid' do
-      before { post '/cuisines', params: { bad_param: 'really bad params' } }
+      before { post '/cuisines', params: {bad_param: 'really bad params'} }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -58,7 +56,7 @@ RSpec.describe 'Cuisines api', type: :request do
 
   describe 'PATCH /cuisines/:id' do
     context 'when cuisine exists' do
-      before { patch "/cuisines/#{cuisine_id}", params: { name: 'fusion' } }
+      before { patch "/cuisines/#{cuisine_id}", params: {name: 'fusion'} }
 
       it 'return status code 204' do
         expect(response).to have_http_status(204)
@@ -68,7 +66,7 @@ RSpec.describe 'Cuisines api', type: :request do
     context 'when restaurant does not exist' do
       let(:cuisine_id) { 22 }
 
-      before { patch "/cuisines/#{cuisine_id}", params: { name: 'fusion' } }
+      before { patch "/cuisines/#{cuisine_id}", params: {name: 'fusion'} }
 
       it 'return status code 404' do
         expect(response).to have_http_status(404)

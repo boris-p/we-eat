@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: restaurants
@@ -20,9 +22,14 @@
 #
 
 class Restaurant < ApplicationRecord
+  has_and_belongs_to_many :cuisines
 
   # validations
   validates_presence_of :name, :url, :address, :latitude, :longitude
   validates_length_of :phone, :minimum => 3
-
+  validates :name, length: { in: 2..100 }
+  validates :rating, inclusion: { in: 0..10 }
+  validates :delivery_time, inclusion: { in: 0..120 }
+  validates :latitude, numericality: { only_integer: false, greater_than_or_equal_to: 0, less_than_or_equal_to: 90 }
+  validates :longitude, numericality: { only_integer: false, greater_than_or_equal_to: 0, less_than_or_equal_to: 180 }
 end

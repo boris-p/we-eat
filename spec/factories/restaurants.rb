@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: restaurants
@@ -21,12 +23,13 @@
 
 FactoryBot.define do
   factory :restaurant do
-    name { Faker::Lorem.word }
+    name { Faker::Lorem.characters(number: 20) }
     url { Faker::Internet.url }
     address { Faker::Address.full_address }
-    latitude { Faker::Address.latitude }
-    longitude { Faker::Address.longitude }
+    latitude { Faker::Number.between(from: 0, to: 90) }
+    longitude { Faker::Number.between(from: 0, to: 180) }
     phone { Faker::PhoneNumber.cell_phone }
-    rating { Faker::Number.between(from: 0.00, to: 10.00) }
+    rating { Faker::Number.between(from: 0, to: 10) }
+    delivery_time { Faker::Number.between(from: 0, to: 120) }
   end
 end

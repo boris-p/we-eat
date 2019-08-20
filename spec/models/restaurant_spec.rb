@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: restaurants
@@ -19,13 +21,11 @@
 #  updated_at     :datetime         not null
 #
 
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe Restaurant, type: :model do
-  # is it common to do these sorts of tests?
-  # feels kind of redundant as it mimics what we have in the model
-  #
-  # are there other tests on the models that are usually done?
+  it { should have_and_belong_to_many(:cuisines) }
+
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:url) }
   it { should validate_presence_of(:address) }

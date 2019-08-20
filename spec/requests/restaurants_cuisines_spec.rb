@@ -16,16 +16,16 @@ RSpec.describe 'Restaurants Cuisines api', type: :request do
     before { patch "/restaurants/#{rest_id}/cuisines/#{cuisine_id}" }
 
     context 'when cuisine was not previously included in the restaurant' do
-      it 'return status 204' do
-        expect(response).to have_http_status(204)
+      it 'return no content status' do
+        expect(response).to have_http_status(:no_content)
       end
     end
 
     context 'when cuisine is already included in the restaurant' do
       before { patch "/restaurants/#{rest_id}/cuisines/#{cuisine_id}" }
 
-      it 'return status code 204' do
-        expect(response).to have_http_status(204)
+      it 'return no content status' do
+        expect(response).to have_http_status(:no_content)
       end
     end
   end
@@ -39,11 +39,11 @@ RSpec.describe 'Restaurants Cuisines api', type: :request do
       delete "/restaurants/#{rest_id}/cuisines/#{cuisine_to_delete}"
     end
 
-    context "when trying to delete a cuisine from a restaurant" do
+    context 'when trying to delete a cuisine from a restaurant' do
       let(:cuisine_to_delete) { cuisines.first.id }
 
-      it 'return status code 204' do
-        expect(response).to have_http_status(204)
+      it 'return no content status' do
+        expect(response).to have_http_status(:no_content)
       end
     end
   end

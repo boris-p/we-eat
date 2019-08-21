@@ -1,18 +1,17 @@
 import React from "react";
-// import logo from './logo.svg';
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 
 import { AppState } from "./reducers";
 import { testAction } from "./actions/restaurantActions";
 
-interface IStateFromProps {
+interface StateFromProps {
   text: string;
 }
 
-type AllProps = IStateFromProps & { dispatch: Dispatch<any> };
+type AllProps = StateFromProps & { dispatch: Dispatch<any> };
 
-const mapStateToProps = (state: AppState): IStateFromProps => {
+const mapStateToProps = (state: AppState): StateFromProps => {
   return { text: state.restaurants.text };
 };
 
@@ -21,7 +20,6 @@ const App: React.FC<AllProps> = props => {
   return (
     <div className="container-fluid">
       <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         <div>
           hello we eat
           <div>text from reducer is {props.text}</div>
@@ -31,4 +29,4 @@ const App: React.FC<AllProps> = props => {
   );
 };
 
-export default connect<IStateFromProps, {}, {}, AppState>(mapStateToProps)(App);
+export default connect<StateFromProps, {}, {}, AppState>(mapStateToProps)(App);

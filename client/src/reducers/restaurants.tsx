@@ -1,22 +1,20 @@
-import {TEST_ACTION} from "../actions/restaurantActions";
+import { TEST_ACTION } from "../actions/restaurantActions";
 
 export const initialState = {
-    text: ''
+  text: "",
 };
 
 interface IRestaurantState {
-    text:string
+  text: string;
 }
 
-
-
-const restaurants = (state = initialState, action:any):IRestaurantState => {
-    switch (action.type) {
-        case TEST_ACTION:
-            return {...state, text:action.text};
-        default:
-            return state;
-    }
+const restaurants = (state = initialState, action: any): IRestaurantState => {
+  switch (action.type) {
+    case TEST_ACTION:
+      return { ...state, text: action.text };
+    default:
+      return state;
+  }
 };
 
-export default restaurants
+export default restaurants;

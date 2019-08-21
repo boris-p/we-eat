@@ -1,9 +1,10 @@
-import { combineReducers } from 'redux'
-import restaurants from './restaurants'
+import { combineReducers } from "redux";
+
+import restaurants from "./restaurants";
 
 const rootReducer = combineReducers({
-    restaurants
+  restaurants,
 });
 export default rootReducer;
 
-export type AppState = ReturnType<typeof rootReducer>
+export type AppState = ReturnType<typeof rootReducer>;

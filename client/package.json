@@ -37,6 +37,22 @@
     ]
   },
   "devDependencies": {
-    "@types/react-redux": "^7.1.2"
+    "@types/react-redux": "^7.1.2",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "eslint": "^6.1.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-plugin-class-property": "^1.1.0",
+    "eslint-plugin-css-modules": "^2.11.0",
+    "eslint-plugin-fp": "^2.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.15.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-react-redux": "^3.0.1",
+    "prettier": "^1.18.2"
   }
 }

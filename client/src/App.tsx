@@ -2,8 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 
+import Header from "./components/Header";
+import FilterBar from "./components/FilterBar";
+import RestaurantsMain from "./components/restaurants/RestaurantsMain";
 import { AppState } from "./reducers";
 import { testAction } from "./actions/restaurantActions";
+
+import "./App.css";
 
 interface StateFromProps {
   text: string;
@@ -18,13 +23,12 @@ const mapStateToProps = (state: AppState): StateFromProps => {
 const App: React.FC<AllProps> = props => {
   props.dispatch(testAction("hello world"));
   return (
-    <div className="container-fluid">
-      <header className="App-header">
-        <div>
-          hello we eat
-          <div>text from reducer is {props.text}</div>
-        </div>
-      </header>
+    <div className="main-layout">
+      <div className="container-fluid">
+        <Header />
+        <FilterBar />
+        <RestaurantsMain />
+      </div>
     </div>
   );
 };

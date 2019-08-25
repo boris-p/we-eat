@@ -1,0 +1,13 @@
+.App-header{
+    min-height: 360px;
+    background: no-repeat center center;
+    background-color: #868e96;
+    position: relative;
+    background-size: cover;
+    background-image: url('./rest_cover_2.jpg');
+    transition: filter 0.5s;
+    filter: grayscale(0.2);
+}
+.App-header:hover {
+    filter: grayscale(0.0);
+}

@@ -22,10 +22,16 @@ const Header: React.FC<HeaderProps> = props => (
           Your heart out
         </h1>
         <p className="title-tag">
-          Bringing food to hungry people.
-          <br /> You choose, you order, you pay, you eat.
-          <br /> <br />
-          It's that simple
+          Bringing food to hungry people. *
+          <br /> You choose, you order, you pay, you eat. It's that simple
+          <br />
+          <br />
+          <small>
+            <strong>
+              like, lunch hungry, not hungry hungry... still a good purpose
+              though
+            </strong>
+          </small>
         </p>
       </div>
     </header>

@@ -15,31 +15,38 @@ export interface RestaurantObj {
   phone: string;
   logoUrl: string;
   imgUrl: string;
+  cuisines: { [s: string]: string };
 }
 interface RestaurantProps {
   restaurantObj: RestaurantObj;
   onClick: (rest: RestaurantObj) => void;
 }
 
-const Restaurant = (props: RestaurantProps) => {
+const Restaurant: React.FC<RestaurantProps> = props => {
   const rest = props.restaurantObj;
   return (
     <div className="restaurant-item" onClick={() => props.onClick(rest)}>
-      <h4>
-        <a href={rest.url} target="_blank" rel="noopener noreferrer">
-          {rest.name}
-        </a>{" "}
-      </h4>
-      <div>
-        <img src={rest.logoUrl} alt="" />
-        <div className="address">{rest.address}</div>
-        <div className="reviews">
-          <div>
-            <span className="star">★</span> {`${rest.rating}/10`}
+      <div className="row">
+        <div className="col-sm-8">
+          <h4>
+            <a href={rest.url} target="_blank" rel="noopener noreferrer">
+              {rest.name}
+            </a>{" "}
+          </h4>
+          <div className="cuisines">
+            {Object.keys(rest.cuisines).join(", ")}
           </div>
-          <div>{`${rest.numOfReviews} reviews`}</div>
+        </div>
+        <div className="col-sm-4">
+          <div className="reviews">
+            <span className="star">★</span>
+            <span className="rating">{rest.rating}</span>
+            <span className="rating-out-of">/10</span>
+            <div className="num-of-reviews">{`${rest.numOfReviews} reviews`}</div>
+          </div>
         </div>
       </div>
+      <div className="address mt-2">{rest.address}</div>
     </div>
   );
 };

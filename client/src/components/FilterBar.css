@@ -1,5 +1,8 @@
-.filter-bar{
+.filter-bar {
     height: 60px;
-    background-color: #c96bdb;
-    color: white;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #c6c6c6;
+    text-align: center;
+    line-height: 60px;
+    font-family: 'Muli', serif;
 }

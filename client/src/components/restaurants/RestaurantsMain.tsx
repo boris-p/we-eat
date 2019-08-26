@@ -8,17 +8,18 @@ import { generateRestaurants } from "./test/RestaurantFactory";
 const restaurantList = generateRestaurants(20);
 
 const clickHandler = (rest: RestaurantObj) => {
+  // TODO - make this dispatch an action select/toggle select a restaurant
   console.log(`clicked on ${rest.name}`);
 };
 const RestaurantsMain = () => (
   <div className="row">
-    <div className="col-md-4">
+    <div className="col-md-6 col-lg-4">
       <Restaurants
         restaurantClick={clickHandler}
         restaurantList={restaurantList}
       />
     </div>
-    <div className="col-md-8">
+    <div className="col-md-6 col-lg-8">
       <Map />
     </div>
   </div>

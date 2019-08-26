@@ -2,17 +2,30 @@ import React from "react";
 
 import "./Header.css";
 
-const Header = () => (
+interface HeaderProps {
+  addRestaurant: () => void;
+}
+const Header: React.FC<HeaderProps> = props => (
   <>
     <header className="App-header row">
       <div className="site-title-container col text-center align-self-center">
-        <h1>WE EAT</h1>
+        <button
+          type="button"
+          className="add-restaurant float-right"
+          onClick={props.addRestaurant}
+        >
+          +
+        </button>
+
+        <h1 className="main-title">WE EAT</h1>
         <h1 style={{ color: "white", height: "0", opacity: 0.1 }}>
           Your heart out
         </h1>
-        <p>
+        <p className="title-tag">
           Bringing food to hungry people.
-          <br /> You choose, you order, you pay, you eat. It's that simple
+          <br /> You choose, you order, you pay, you eat.
+          <br /> <br />
+          It's that simple
         </p>
       </div>
     </header>

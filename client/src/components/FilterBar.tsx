@@ -3,7 +3,7 @@ import "./FilterBar.css";
 
 const FilterBar = () => (
   <div className="row">
-    <div className="col filter-bar">I am the awesome filter</div>
+    <div className="col filter-bar">One day this will be a filter</div>
   </div>
 );
 

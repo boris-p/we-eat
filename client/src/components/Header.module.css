@@ -1,4 +1,4 @@
-.App-header{
+.appHeader{
     min-height: 420px;
     background: no-repeat center center;
     background-color: #868e96;
@@ -8,22 +8,22 @@
     transition: filter 0.5s;
     filter: grayscale(0.2);
 }
-.App-header:hover {
+.appHeader:hover {
     filter: grayscale(0.0);
 }
-.main-title{
+.mainTitle{
     font-weight: 700;
     color: white;
     text-shadow: 3px 3px 11px #3d3d3dad;
     font-size: 110px;
 }
-.title-tag{
+.titleTag{
     color: white;
     font-weight: 900;
     text-shadow: 3px 3px 11px #7d7d7dad;
     font-size: 16px;
 }
-button.add-restaurant{
+button.addRestaurant{
     font-size: 24px;
     height: 40px;
     width: 40px;
@@ -33,6 +33,6 @@ button.add-restaurant{
     background-color: white;
     box-shadow: 1px 5px 9px 2px #787878ab;
 }
-button.add-restaurant:focus {
+button.addRestaurant:focus {
     outline: none;
 }

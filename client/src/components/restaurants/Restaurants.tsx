@@ -1,15 +1,17 @@
 import React from "react";
 
-import Restaurant, { RestaurantObj } from "./Restaurant";
-import "./Restaurants.css";
+import { RestaurantObj } from "../../models/Restaurant";
+
+import Restaurant from "./Restaurant";
+import styles from "./Restaurants.module.css";
 
 interface RestaurantsProps {
   restaurantClick: (rest: RestaurantObj) => void;
   restaurantList: RestaurantObj[];
 }
 const Restaurants = (props: RestaurantsProps) => (
-  <div className="restaurant-list">
-    <div className="info-line">
+  <div>
+    <div className={styles.infoLine}>
       Showing {props.restaurantList.length} restaurants
     </div>
     {props.restaurantList.map(restaurant => (

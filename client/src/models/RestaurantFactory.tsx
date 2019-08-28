@@ -1,27 +1,28 @@
 import * as faker from "faker";
 
-type Cuisines = { [s: string]: string };
+import { Cuisine } from "./Cuisine";
+import { RestaurantObj } from "./Restaurant";
+
 const AVAILIBLE_CUISINES = [
-  "asian",
-  "american",
-  "vegan",
-  "greek",
-  "turkish",
-  "puerto-russian",
-  "anglo-indian",
+  { id: 1, name: "asian" },
+  { id: 2, name: "american" },
+  { id: 3, name: "greek" },
+  { id: 13, name: "vegan" },
+  { id: 15, name: "puerto-russian" },
+  { id: 16, name: "anglo-indian" },
 ];
-function _generateCuisines(): Cuisines {
-  const cuisines: Cuisines = {};
+
+function _generateCuisines(): Cuisine[] {
+  const cuisinesObj: { [s: string]: Cuisine } = {};
   const numOfCuisinesToGet = Math.floor(
     Math.random() * AVAILIBLE_CUISINES.length
   );
-
   for (let i = 0; i < numOfCuisinesToGet; i++) {
     const cuisine =
       AVAILIBLE_CUISINES[Math.floor(Math.random() * AVAILIBLE_CUISINES.length)];
-    cuisines[cuisine] = cuisine;
+    cuisinesObj[cuisine.id] = cuisine;
   }
-  return cuisines;
+  return Object.values(cuisinesObj);
 }
 function _restaurantFactory() {
   return {
@@ -42,10 +43,13 @@ function _restaurantFactory() {
   };
 }
 
-export function generateRestaurants(count = 1) {
+export function generateRestaurants(count = 1): RestaurantObj[] {
   const restaurants = [];
   for (let i = 0; i < count; i++) {
     restaurants.push(_restaurantFactory());
   }
   return restaurants;
+}
+export function generateRestaurant(): RestaurantObj {
+  return generateRestaurants()[0];
 }

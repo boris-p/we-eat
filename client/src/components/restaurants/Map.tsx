@@ -1,8 +1,9 @@
 import React from "react";
-import "./Map.css";
+
+import styles from "./Map.module.css";
 
 const Map = () => (
-  <div className="map-container text-center">map placeholder</div>
+  <div className={`${styles.mapContainer} text-center`}>map placeholder</div>
 );
 
 export default Map;

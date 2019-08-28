@@ -1,35 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 
+import styles from "./App.module.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FilterBar from "./components/FilterBar";
 import RestaurantsMain from "./components/restaurants/RestaurantsMain";
 import { AppState } from "./reducers";
-import { addRestaurant } from "./actions/restaurantActions";
-
-import "./App.css";
+import { addRestaurant, loadRestaurants } from "./actions/restaurantActions";
+import { getRestaurantsText } from "./selectors/RestaurantSelectors";
 
 interface StateFromProps {
   text: string;
 }
-interface DispatchToProps {
-  addRestaurant: typeof addRestaurant;
-}
 
 const mapDispatchToProps = {
   addRestaurant,
+  loadRestaurants,
 };
 const mapStateToProps = (state: AppState): StateFromProps => {
-  return { text: state.restaurants.text };
+  return { text: getRestaurantsText(state) };
 };
-type AllProps = StateFromProps & DispatchToProps;
+type AllProps = StateFromProps & typeof mapDispatchToProps;
 
-const App: React.FC<AllProps> = props => {
+const App: React.FC<AllProps> = ({ addRestaurant, loadRestaurants }) => {
+  useEffect(() => {
+    loadRestaurants();
+  }, [loadRestaurants]);
   return (
-    <div className="main-layout">
+    <div className={styles.mainLayout}>
       <div className="container-fluid">
-        <Header addRestaurant={props.addRestaurant} />
+        <Header addRestaurant={addRestaurant} />
         <FilterBar />
         <RestaurantsMain />
         <Footer />

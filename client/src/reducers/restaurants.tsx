@@ -19,7 +19,11 @@ const restaurantsTextFilter = (
   restaurant: RestaurantObj,
   filter: TextFilter<RestaurantObj>
 ): boolean => {
-  return restaurant.name.includes(filter.value);
+  return (
+    restaurant.name.includes(filter.value) ||
+    restaurant.address.includes(filter.value) ||
+    restaurant.cuisines.some(cuisine => cuisine.name.includes(filter.value))
+  );
 };
 export const TEXT_FILTER = "TEXT_FILTER";
 
@@ -30,11 +34,7 @@ export const initialState: RestaurantState = {
   restaurantsRequestStatus: REQUEST_STATUS.NOT_LOADED,
   filterActive: false,
   filters: {
-    TEXT_FILTER: textFilter<RestaurantObj>(
-      "",
-      ["name", "address", "cuisines"],
-      restaurantsTextFilter
-    ),
+    TEXT_FILTER: textFilter<RestaurantObj>("", restaurantsTextFilter),
   },
 };
 

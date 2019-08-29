@@ -8,7 +8,7 @@ export const getFilterActive = (state: AppState) =>
   state.restaurants.filterActive;
 
 export const getTextFilterValue = (state: AppState, filterKey: string) => {
-  const filter = state.restaurants.filters[filterKey] as TextFilter;
+  const filter = state.restaurants.filters[filterKey] as TextFilter<any>;
   return filter.value;
 };
 

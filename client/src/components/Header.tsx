@@ -7,13 +7,13 @@ import {
   filterRestaurantsByText,
 } from "../actions/restaurantActions";
 import { AppState } from "../reducers";
-import { getRestaurantsText } from "../selectors/RestaurantSelectors";
+import { getTextFilterValue } from "../selectors/RestaurantSelectors";
 import { TEXT_FILTER } from "../reducers/restaurants";
 
 import styles from "./Header.module.css";
 
 interface StateFromProps {
-  text: string;
+  filteredText: string;
 }
 
 const mapDispatchToProps = {
@@ -22,7 +22,7 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = (state: AppState): StateFromProps => {
-  return { text: getRestaurantsText(state) };
+  return { filteredText: getTextFilterValue(state, TEXT_FILTER) };
 };
 
 type AllProps = StateFromProps & typeof mapDispatchToProps;
@@ -54,9 +54,9 @@ const Header: React.FC<AllProps> = props => (
         </small>
       </p>
       <div>
+        <div>find a place to eat</div>
         <input
           type="text"
-          defaultValue="search me"
           onChange={event => {
             props.filterRestaurantsByText(TEXT_FILTER, event.target.value);
           }}

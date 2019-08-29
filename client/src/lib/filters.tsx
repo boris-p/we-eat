@@ -8,7 +8,6 @@ export interface Filter {
 }
 export interface TextFilter<T> extends Filter {
   value: string;
-  searchFields: (string | number | object)[];
   filterFn: (t: T, filter: TextFilter<T>) => boolean;
 }
 export interface RangeFilter extends Filter {
@@ -20,7 +19,6 @@ export type FilterMap = { [s: string]: Filter };
 
 export function textFilter<T>(
   value: string,
-  searchFields: (string | number | object)[],
   filterFn: (t: T, filter: TextFilter<T>) => boolean,
   active = false
 ): TextFilter<T> {
@@ -28,7 +26,6 @@ export function textFilter<T>(
     filterType: FILTER_TYPE.TEXT,
     value,
     filterFn,
-    searchFields,
     active,
   };
 }

@@ -5,6 +5,7 @@ import { RestaurantObj } from "../models/Restaurant";
 export const TEST_ACTION = "SEND_MESSAGE";
 export const ADD_RESTAURANT = "ADD_RESTAURANT";
 export const SELECT_RESTAURANT = "SELECT_RESTAURANT";
+export const FILTER_RESTAURANTS = "FILTER_RESTAURANTS";
 
 export const LOAD_RESTAURANTS = "LOAD_RESTAURANTS";
 
@@ -33,4 +34,23 @@ export const loadRestaurants = () => {
 export const selectRestaurant = (restaurant: RestaurantObj) => ({
   type: SELECT_RESTAURANT,
   restaurant,
+});
+export const filterRestaurantsByText = (filterKey: string, value: string) => ({
+  type: FILTER_RESTAURANTS,
+  payload: {
+    filterKey,
+    value,
+  },
+});
+export const filterRestaurantsByRange = (
+  filterKey: string,
+  minValue: number,
+  maxValue?: number
+) => ({
+  type: FILTER_RESTAURANTS,
+  payload: {
+    filterKey,
+    minValue,
+    maxValue,
+  },
 });

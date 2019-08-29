@@ -1,12 +1,33 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import { connect } from "react-redux";
+
+import {
+  addRestaurant,
+  filterRestaurantsByText,
+} from "../actions/restaurantActions";
+import { AppState } from "../reducers";
+import { getRestaurantsText } from "../selectors/RestaurantSelectors";
+import { TEXT_FILTER } from "../reducers/restaurants";
 
 import styles from "./Header.module.css";
 
-interface HeaderProps {
-  addRestaurant: () => void;
+interface StateFromProps {
+  text: string;
 }
-const Header: React.FC<HeaderProps> = props => (
+
+const mapDispatchToProps = {
+  addRestaurant,
+  filterRestaurantsByText,
+};
+
+const mapStateToProps = (state: AppState): StateFromProps => {
+  return { text: getRestaurantsText(state) };
+};
+
+type AllProps = StateFromProps & typeof mapDispatchToProps;
+
+const Header: React.FC<AllProps> = props => (
   <Row className={styles.appHeader}>
     <Col className="site-title-container text-center align-self-center">
       <button
@@ -32,8 +53,20 @@ const Header: React.FC<HeaderProps> = props => (
           </strong>
         </small>
       </p>
+      <div>
+        <input
+          type="text"
+          defaultValue="search me"
+          onChange={event => {
+            props.filterRestaurantsByText(TEXT_FILTER, event.target.value);
+          }}
+        />
+      </div>
     </Col>
   </Row>
 );
 
-export default Header;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);

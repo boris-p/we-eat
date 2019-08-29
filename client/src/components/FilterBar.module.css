@@ -1,8 +1,20 @@
 .filterBar {
-    height: 60px;
+    min-height: 120px;
     margin-bottom: 2rem;
     border-bottom: 1px solid #c6c6c6;
     text-align: center;
     line-height: 60px;
     font-family: 'Muli', serif;
+}
+.slider{
+    min-width:200px;
+    max-width:400px;
+    margin:0 1rem;
+    flex-grow: 1;
+}
+@media (max-width: 768px) {
+    .slider {
+        max-width:inherit;
+        width: 100%;
+    }
 }

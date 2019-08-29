@@ -7,16 +7,13 @@ import styles from "./Restaurant.module.css";
 
 interface RestaurantProps {
   restaurantObj: RestaurantObj;
-  onClick: (rest: RestaurantObj) => void;
+  onClick: () => void;
 }
 
 const Restaurant: React.FC<RestaurantProps> = props => {
   const restaurant = props.restaurantObj;
   return (
-    <div
-      className={styles.restaurantItem}
-      onClick={() => props.onClick(restaurant)}
-    >
+    <div className={styles.restaurantItem} onClick={props.onClick}>
       <Row>
         <Col sm={8}>
           <h4>
@@ -39,7 +36,7 @@ const Restaurant: React.FC<RestaurantProps> = props => {
           </div>
         </Col>
       </Row>
-      <div className={`${styles.address  }mt-2`}>{restaurant.address}</div>
+      <div className={`${styles.address}mt-2`}>{restaurant.address}</div>
     </div>
   );
 };

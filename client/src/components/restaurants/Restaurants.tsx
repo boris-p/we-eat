@@ -18,7 +18,7 @@ const Restaurants = (props: RestaurantsProps) => (
       <Restaurant
         key={restaurant.id}
         restaurantObj={restaurant}
-        onClick={props.restaurantClick}
+        onClick={() => props.restaurantClick(restaurant)}
       />
     ))}
   </div>

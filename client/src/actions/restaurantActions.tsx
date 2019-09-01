@@ -46,11 +46,13 @@ export const filterRestaurantsByRange = (
   filterKey: string,
   minValue: number,
   maxValue?: number
-) => ({
-  type: FILTER_RESTAURANTS,
-  payload: {
-    filterKey,
-    minValue,
-    maxValue,
-  },
-});
+) => {
+  return {
+    type: FILTER_RESTAURANTS,
+    payload: {
+      filterKey,
+      minValue,
+      maxValue,
+    },
+  };
+};

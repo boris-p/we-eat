@@ -42,7 +42,7 @@ const Header: React.FC<AllProps> = props => (
       <h1 style={{ color: "white", height: "0", opacity: 0.1 }}>
         Your heart out
       </h1>
-      <p className={styles.titleTag}>
+      <p className={styles.lineTag}>
         Bringing food to hungry people. *
         <br /> You choose, you order, you pay, you eat. It's that simple
         <br />
@@ -54,8 +54,13 @@ const Header: React.FC<AllProps> = props => (
         </small>
       </p>
       <div>
-        <div>find a place to eat</div>
+        <div>
+          <small>
+            <strong className={styles.inputTagLine}>find a place to eat</strong>
+          </small>
+        </div>
         <input
+          className={styles.inputElement}
           type="text"
           onChange={event => {
             props.filterRestaurantsByText(TEXT_FILTER, event.target.value);

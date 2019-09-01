@@ -8,24 +8,30 @@ import {
 import { restaurantAdaptor, RestaurantObj } from "../models/Restaurant";
 import { REQUEST_STATUS } from "../middlewares/ApiCall";
 import {
-  Filter,
-  FILTER_TYPE,
+  applyFilters,
   FilterMap,
-  TextFilter,
+  rangeFilter,
   textFilter,
+  updateFilterState,
 } from "../lib/filters";
+import { rangeFilterDefaultFn } from "../lib/filterFuncs";
 
 const restaurantsTextFilter = (
   restaurant: RestaurantObj,
-  filter: TextFilter<RestaurantObj>
+  value: string
 ): boolean => {
   return (
-    restaurant.name.includes(filter.value) ||
-    restaurant.address.includes(filter.value) ||
-    restaurant.cuisines.some(cuisine => cuisine.name.includes(filter.value))
+    restaurant.name.includes(value) ||
+    restaurant.address.includes(value) ||
+    restaurant.cuisines.some(cuisine => cuisine.name.includes(value))
   );
 };
+
+// filter unique identifiers
 export const TEXT_FILTER = "TEXT_FILTER";
+export const DELIVERY_TIME_FILTER = "DELIVERY_TIME_FILTER";
+export const STARS_FILTER = "STARS_FILTER";
+export const REVIEWS_FILTER = "REVIEWS_FILTER";
 
 export const initialState: RestaurantState = {
   text: "",
@@ -34,7 +40,10 @@ export const initialState: RestaurantState = {
   restaurantsRequestStatus: REQUEST_STATUS.NOT_LOADED,
   filterActive: false,
   filters: {
-    TEXT_FILTER: textFilter<RestaurantObj>("", restaurantsTextFilter),
+    [TEXT_FILTER]: textFilter<RestaurantObj>("", restaurantsTextFilter),
+    [DELIVERY_TIME_FILTER]: rangeFilter("deliveryTime", rangeFilterDefaultFn),
+    [STARS_FILTER]: rangeFilter("rating", rangeFilterDefaultFn),
+    [REVIEWS_FILTER]: rangeFilter("numOfReviews", rangeFilterDefaultFn),
   },
 };
 
@@ -66,20 +75,19 @@ const restaurants = (
       } else return state;
     }
     case FILTER_RESTAURANTS: {
-      const filter = state.filters[action.payload.filterKey] as Filter;
-      if (filter.filterType === FILTER_TYPE.TEXT) {
-        const fltr = filter as TextFilter<RestaurantObj>;
-        fltr.active = true;
-        fltr.value = action.payload.value;
-        return {
-          ...state,
-          filterActive: true,
-          filteredRestaurants: state.restaurants.filter(restaurant =>
-            fltr.filterFn(restaurant, fltr)
-          ),
-        };
-      }
-      return state;
+      const updatedFilters = {
+        ...state.filters,
+        [action.payload.filterKey]: updateFilterState(
+          state.filters[action.payload.filterKey],
+          action
+        ),
+      };
+      return {
+        ...state,
+        filters: updatedFilters,
+        filterActive: true,
+        filteredRestaurants: applyFilters(state.restaurants, updatedFilters),
+      };
     }
     default:
       return state;

@@ -47,6 +47,6 @@ export function restaurantAdaptor(rawRestaurant: RawRestaurant): RestaurantObj {
     phone: rawRestaurant.phone,
     logoUrl: rawRestaurant.logo_url,
     imgUrl: rawRestaurant.img_url,
-    cuisines: rawRestaurant.cuisines.map(cuisineAdaptor) || {},
+    cuisines: rawRestaurant.cuisines.map(cuisineAdaptor) || [],
   };
 }

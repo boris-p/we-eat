@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => (
+const Footer = () => (
   <footer className="App-footer row">
     <div className="col text-center text-muted">
       <small>
@@ -10,4 +10,4 @@ const Header = () => (
   </footer>
 );
 
-export default Header;
+export default Footer;

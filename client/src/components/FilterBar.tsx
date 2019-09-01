@@ -1,10 +1,12 @@
 import React from "react";
-import "./FilterBar.css";
+import { Row, Col } from "react-bootstrap";
+
+import styles from "./FilterBar.module.css";
 
 const FilterBar = () => (
-  <div className="row">
-    <div className="col filter-bar">One day this will be a filter</div>
-  </div>
+  <Row>
+    <Col className={styles.filterBar}>One day this will be a filter</Col>
+  </Row>
 );
 
 export default FilterBar;

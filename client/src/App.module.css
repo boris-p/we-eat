@@ -1,7 +1,4 @@
-.main-layout {
+.mainLayout {
     min-height: 100vh;
     border: 3px solid black;
-}
-h1{
-    font-family: 'Muli', serif;
 }

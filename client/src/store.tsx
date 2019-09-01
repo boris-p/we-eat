@@ -1,9 +1,13 @@
 import { applyMiddleware, createStore } from "redux";
 import { createLogger } from "redux-logger";
+import { composeWithDevTools } from "redux-devtools-extension";
 
+import { apiCall } from "./middlewares/ApiCall";
 import rootReducer from "./reducers";
 
-const logger = createLogger();
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(apiCall(), createLogger()))
+);
 
 export default store;
